@@ -65,21 +65,21 @@ import org.apache.activemq.artemis.spi.core.protocol.RemotingConnection;
  * <pre>
  * {@code
  * <!--  Artemis interceptor specific logging begins -->
- * 			<periodic-rotating-file-handler name="INTERCEPTOR_FILE" autoflush="true">
- *     			<level name="DEBUG"/>
- *     			<formatter>
- *         			<named-formatter name="PATTERN"/>
- *     			</formatter>
- *     			<file relative-to="jboss.server.log.dir" path="artemis_interceptor.log"/>
- *     			<suffix value=".yyyy-MM-dd"/>
- *     			<append value="true"/>
- * 			</periodic-rotating-file-handler>
- * 			<logger category="org.bershath.labs.jms.intercept" use-parent-handlers="false">
- *    				<level name="DEBUG"/>
- *    				<handlers>
+ * 		<periodic-rotating-file-handler name="INTERCEPTOR_FILE" autoflush="true">
+ *     		<level name="DEBUG"/>
+ *     		<formatter>
+ *     			<named-formatter name="PATTERN"/>
+ *    		</formatter>
+ *    		<file relative-to="jboss.server.log.dir" path="artemis_interceptor.log"/>
+ *     		<suffix value=".yyyy-MM-dd"/>
+ *     		<append value="true"/>
+ * 		</periodic-rotating-file-handler>
+ * 		<logger category="org.bershath.labs.jms.intercept" use-parent-handlers="false">
+ *    			<level name="DEBUG"/>
+ *    			<handlers>
  *         			<handler name="INTERCEPTOR_FILE"/>
- *    				</handlers>
- * 			</logger>
+ *   			</handlers>
+ * 		</logger>
  * <!--  Artemis interceptor specific logging ends -->
  *}
  *</pre>
