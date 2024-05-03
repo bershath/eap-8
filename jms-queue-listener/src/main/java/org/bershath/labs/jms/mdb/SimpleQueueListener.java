@@ -30,7 +30,7 @@ public class SimpleQueueListener implements MessageListener {
             if(message instanceof TextMessage)
                 log.info(message.getBody(String.class));
             else
-                log.info("message with the id" + message.getJMSMessageID() + "received");
+                log.info("message with the id " + message.getJMSMessageID() + " received");
         } catch (JMSException e) {
             throw new RuntimeException(e);
         }
