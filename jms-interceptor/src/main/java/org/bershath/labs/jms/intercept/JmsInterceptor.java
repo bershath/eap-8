@@ -61,25 +61,25 @@ import org.apache.activemq.artemis.spi.core.protocol.RemotingConnection;
  * Optional:
  * This is an optional step to divert the interceptor logging to a separate file. The following logging configuration needs to
  * be added to the exiting logging configuration in the JBoss EAP configuration file.
- *<br/>
+ * <br/>
  * <pre>
  * {@code
  * <!--  Artemis interceptor specific logging begins -->
- * 		<periodic-rotating-file-handler name="INTERCEPTOR_FILE" autoflush="true">
- *     		<level name="DEBUG"/>
- *     		<formatter>
- *     			<named-formatter name="PATTERN"/>
- *    		</formatter>
- *    		<file relative-to="jboss.server.log.dir" path="artemis_interceptor.log"/>
- *     		<suffix value=".yyyy-MM-dd"/>
- *     		<append value="true"/>
- * 		</periodic-rotating-file-handler>
- * 		<logger category="org.bershath.labs.jms.intercept" use-parent-handlers="false">
- *    			<level name="DEBUG"/>
- *    			<handlers>
- *         			<handler name="INTERCEPTOR_FILE"/>
- *   			</handlers>
- * 		</logger>
+ * <periodic-rotating-file-handler name="INTERCEPTOR_FILE" autoflush="true">
+ *      <level name="DEBUG"/>
+ *     	<formatter>
+ *     		<named-formatter name="PATTERN"/>
+ *   	</formatter>
+ *    	<file relative-to="jboss.server.log.dir" path="artemis_interceptor.log"/>
+ *    	<suffix value=".yyyy-MM-dd"/>
+ *     	<append value="true"/>
+ * 	</periodic-rotating-file-handler>
+ * 	<logger category="org.bershath.labs.jms.intercept" use-parent-handlers="false">
+ *    	<level name="DEBUG"/>
+ *    	<handlers>
+ *         	<handler name="INTERCEPTOR_FILE"/>
+ *   	</handlers>
+ * 	</logger>
  * <!--  Artemis interceptor specific logging ends -->
  *}
  *</pre>
