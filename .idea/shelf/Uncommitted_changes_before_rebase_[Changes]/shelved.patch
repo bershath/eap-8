@@ -1,0 +1,73 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"f69c29b0-5048-4cf0-ad60-f46597de32d1\" name=\"Changes\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/.gitignore\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/.idea/encodings.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/.idea/jpa-buddy.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/.idea/uiDesigner.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/jms-clients/pom.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/jms-clients/src/main/java/org/bershath/labs/jms/Main.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/jms-clients/src/main/java/org/bershath/labs/jms/QueueSender.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/jms-clients/src/main/resources/jndi.properties\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/jms-interceptor/extras/module.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/jms-interceptor/pom.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/jms-interceptor/src/main/java/org/bershath/labs/jms/intercept/JmsInterceptor.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/jms-queue-listener/pom.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/jms-queue-listener/src/main/java/org/bershath/labs/jms/mdb/SimpleQueueListener.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/org/example/Main.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 7\n}</component>\n  <component name=\"ProjectId\" id=\"2fr9OAKRJP4JuVONhlACmZESMWn\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\n    \"Application.QueueSender.executor\": \"Run\",\n    \"Maven.jms-interceptor.executor\": \"Run\",\n    \"Maven.jms-queue-listener.executor\": \"Run\",\n    \"OverrideImplement.generate.javadoc\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\n    \"git-widget-placeholder\": \"main\",\n    \"kotlin-language-version-configured\": \"true\",\n    \"onboarding.tips.debug.path\": \"/Users/bershath/apps/workspaces/IntelliJProjects/eap-8/jms-interceptor/src/main/java/org/example/Main.java\",\n    \"settings.editor.selected.configurable\": \"MavenSettings\"\n  }\n}]]></component>\n  <component name=\"RunManager\" selected=\"Maven.jms-interceptor\">\n    <configuration name=\"QueueSender\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.bershath.labs.jms.QueueSender\" />\n      <module name=\"jms-clients\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"org.bershath.labs.jms.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"jms-interceptor\" type=\"MavenRunConfiguration\" factoryName=\"Maven\">\n      <MavenSettings>\n        <option name=\"myGeneralSettings\" />\n        <option name=\"myRunnerSettings\" />\n        <option name=\"myRunnerParameters\">\n          <MavenRunnerParameters>\n            <option name=\"cmdOptions\" />\n            <option name=\"profiles\">\n              <set />\n            </option>\n            <option name=\"goals\">\n              <list>\n                <option value=\"package\" />\n              </list>\n            </option>\n            <option name=\"multimoduleDir\" />\n            <option name=\"pomFileName\" />\n            <option name=\"profilesMap\">\n              <map />\n            </option>\n            <option name=\"projectsCmdOptionValues\">\n              <list />\n            </option>\n            <option name=\"resolveToWorkspace\" value=\"false\" />\n            <option name=\"workingDirPath\" value=\"$PROJECT_DIR$/jms-interceptor\" />\n          </MavenRunnerParameters>\n        </option>\n      </MavenSettings>\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"jms-queue-listener\" type=\"MavenRunConfiguration\" factoryName=\"Maven\">\n      <MavenSettings>\n        <option name=\"myGeneralSettings\" />\n        <option name=\"myRunnerSettings\" />\n        <option name=\"myRunnerParameters\">\n          <MavenRunnerParameters>\n            <option name=\"cmdOptions\" />\n            <option name=\"profiles\">\n              <set />\n            </option>\n            <option name=\"goals\">\n              <list>\n                <option value=\"package\" />\n              </list>\n            </option>\n            <option name=\"multimoduleDir\" />\n            <option name=\"pomFileName\" />\n            <option name=\"profilesMap\">\n              <map />\n            </option>\n            <option name=\"projectsCmdOptionValues\">\n              <list />\n            </option>\n            <option name=\"resolveToWorkspace\" value=\"false\" />\n            <option name=\"workingDirPath\" value=\"$PROJECT_DIR$/jms-queue-listener\" />\n          </MavenRunnerParameters>\n        </option>\n      </MavenSettings>\n      <method v=\"2\" />\n    </configuration>\n    <list>\n      <item itemvalue=\"Application.QueueSender\" />\n      <item itemvalue=\"Maven.jms-interceptor\" />\n      <item itemvalue=\"Maven.jms-queue-listener\" />\n    </list>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.QueueSender\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"f69c29b0-5048-4cf0-ad60-f46597de32d1\" name=\"Changes\" comment=\"\" />\n      <created>1714548294162</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1714548294162</updated>\n    </task>\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>\n          <line>13</line>\n          <option name=\"timeStamp\" value=\"1\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/jms-clients/src/main/java/org/bershath/labs/jms/Main.java</url>\n          <line>13</line>\n          <option name=\"timeStamp\" value=\"2\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/jms-interceptor/src/main/java/org/example/Main.java</url>\n          <line>13</line>\n          <option name=\"timeStamp\" value=\"3\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision d9a5c2962f5465012ac30dc1af7b422b78f8c1dc)
++++ b/.idea/workspace.xml	(date 1714756567778)
+@@ -4,26 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="f69c29b0-5048-4cf0-ad60-f46597de32d1" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/jms-clients/pom.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/jms-clients/src/main/java/org/bershath/labs/jms/Main.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/jms-clients/src/main/java/org/bershath/labs/jms/QueueSender.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/jms-clients/src/main/resources/jndi.properties" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/jms-interceptor/extras/module.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/jms-interceptor/pom.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/jms-interceptor/src/main/java/org/bershath/labs/jms/intercept/JmsInterceptor.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/jms-queue-listener/pom.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/jms-queue-listener/src/main/java/org/bershath/labs/jms/mdb/SimpleQueueListener.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+-    </list>
++    <list default="true" id="f69c29b0-5048-4cf0-ad60-f46597de32d1" name="Changes" comment="EAP 8 examples" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -39,6 +20,12 @@
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
++  <component name="GithubPullRequestsUISettings"><![CDATA[{
++  "selectedUrlAndAccountId": {
++    "url": "https://github.com/bershath/eap-8",
++    "accountId": "53f1a821-8636-4296-9d9e-f750b7e7f430"
++  }
++}]]></component>
+   <component name="ProjectColorInfo">{
+   &quot;associatedIndex&quot;: 7
+ }</component>
+@@ -159,10 +146,21 @@
+       <option name="presentableId" value="Default" />
+       <updated>1714548294162</updated>
+     </task>
++    <task id="LOCAL-00001" summary="EAP 8 examples">
++      <option name="closed" value="true" />
++      <created>1714756315432</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1714756315432</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
++    <MESSAGE value="EAP 8 examples" />
++    <option name="LAST_COMMIT_MESSAGE" value="EAP 8 examples" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
