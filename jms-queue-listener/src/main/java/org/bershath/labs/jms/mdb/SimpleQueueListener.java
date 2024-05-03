@@ -5,6 +5,7 @@ import jakarta.ejb.MessageDriven;
 import jakarta.jms.JMSException;
 import jakarta.jms.Message;
 import jakarta.jms.MessageListener;
+import jakarta.jms.TextMessage;
 import org.jboss.logging.Logger;
 
 @MessageDriven(
@@ -26,7 +27,10 @@ public class SimpleQueueListener implements MessageListener {
     @Override
     public void onMessage(Message message) {
         try {
-            log.info(message.getBody(String.class));
+            if(message instanceof TextMessage)
+                log.info(message.getBody(String.class));
+            else
+                log.info("message with the id" + message.getJMSMessageID() + "received");
         } catch (JMSException e) {
             throw new RuntimeException(e);
         }
