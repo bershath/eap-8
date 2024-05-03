@@ -27,6 +27,8 @@ import org.apache.activemq.artemis.spi.core.protocol.RemotingConnection;
  *  The module.xml needs to be placed along with the packaged jar in the 'main' folder of the module.
  *  The module.xml should look identical to the following:
  *<br/>
+ * <pre>
+ * {@code
  * <?xml version="1.0" encoding="UTF-8"?>
  * <module xmlns="urn:jboss:module:1.1" name="org.bershath.labs.jms.intercept">
  *     <resources>
@@ -37,16 +39,20 @@ import org.apache.activemq.artemis.spi.core.protocol.RemotingConnection;
  *         <module name="org.jboss.logging"/>
  *     </dependencies>
  * </module>
- *
+ *}
+ * </pre>
  *<br/>
  * Deployment :
  * Start the eap server in admin mode:
- *     $ ./standalone.sh -c int.xml --start-mode=admin-only
+ * <pre>
+ * $ ./standalone.sh -c int.xml --start-mode=admin-only
+ * </pre>
  *<br/>
  * Log on to JBoss CLI:
  * Add the interceptor:
+ * <pre>
  *     ./subsystem=messaging-activemq/server=default:list-add(name=incoming-interceptors,value={name=>"org.jboss.labs.eap.interceptor.message.CustomMessageInterceptor",module=>"org.jboss.labs.eap.interceptor.message"})
- *
+ *</pre>
  *<br/>
  *
  * The build process will autonomously create a module to host the interceptor
@@ -56,6 +62,8 @@ import org.apache.activemq.artemis.spi.core.protocol.RemotingConnection;
  * This is an optional step to divert the interceptor logging to a separate file. The following logging configuration needs to
  * be added to the exiting logging configuration in the JBoss EAP configuration file.
  *<br/>
+ * <pre>
+ * {@code
  * <!--  Artemis interceptor specific logging begins -->
  * 			<periodic-rotating-file-handler name="INTERCEPTOR_FILE" autoflush="true">
  *     			<level name="DEBUG"/>
@@ -73,8 +81,8 @@ import org.apache.activemq.artemis.spi.core.protocol.RemotingConnection;
  *    				</handlers>
  * 			</logger>
  * <!--  Artemis interceptor specific logging ends -->
- *
- *
+ *}
+ *</pre>
  *
  */
 
