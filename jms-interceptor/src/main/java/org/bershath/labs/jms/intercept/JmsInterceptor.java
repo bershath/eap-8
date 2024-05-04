@@ -45,13 +45,13 @@ import org.apache.activemq.artemis.spi.core.protocol.RemotingConnection;
  * Deployment :
  * Start the eap server in admin mode:
  * <pre>
- * $ ./standalone.sh -c int.xml --start-mode=admin-only
+ * % ./standalone.sh -c int.xml --start-mode=admin-only
  * </pre>
  *<br/>
  * Log on to JBoss CLI:
  * Add the interceptor:
  * <pre>
- *     ./subsystem=messaging-activemq/server=default:list-add(name=incoming-interceptors,value={name=>"org.jboss.labs.eap.interceptor.message.CustomMessageInterceptor",module=>"org.jboss.labs.eap.interceptor.message"})
+ *     ./subsystem=messaging-activemq/server=default:list-add(name=incoming-interceptors,value={name=>"org.bershath.labs.jms.intercept.JmsInterceptor",module=>"org.bershath.labs.jms.intercept"})
  *</pre>
  *<br/>
  *

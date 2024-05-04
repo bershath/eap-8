@@ -67,7 +67,7 @@
                                     <overWrite>true</overWrite>
                                 </artifactItem>
                             </artifactItems>
-                            <outputDirectory>/Users/bershath/apps/jboss/jboss-eap-8.0/modules/org/bershath/labs/jms/intercept/</outputDirectory>
+                            <outputDirectory>/Users/bershath/apps/jboss/jboss-eap-8.0/modules/org/bershath/labs/jms/intercept/main/</outputDirectory>
                             <overWriteReleases>true</overWriteReleases>
                             <overWriteSnapshots>true</overWriteSnapshots>
                         </configuration>

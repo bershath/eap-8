@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module xmlns="urn:jboss:module:1.1" name="org.jboss.labs.eap.interceptor.message">
+<module xmlns="urn:jboss:module:1.1" name="org.bershath.labs.jms.intercept">
     <resources>
         <resource-root path="jms-interceptor-1.0-SNAPSHOT.jar"/>
     </resources>
