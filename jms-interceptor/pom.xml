@@ -24,6 +24,12 @@
             <artifactId>artemis-core-client-all</artifactId>
             <version>2.21.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>jboss-logging</artifactId>
+            <version>3.5.3.Final</version>
+        </dependency>
+
     </dependencies>
 
 
@@ -42,7 +48,7 @@
                         </goals>
                         <configuration>
                             <sourceFile>extras/module.xml</sourceFile>
-                            <destinationFile>/Users/bershath/apps/jboss/jboss-eap-8.0/modules/org/bershath/labs/jms/intercept/module.xml</destinationFile>
+                            <destinationFile>/Users/bershath/apps/jboss/jboss-eap-8.0/modules/org/bershath/labs/jms/intercept/main/module.xml</destinationFile>
                         </configuration>
                     </execution>
                 </executions>
