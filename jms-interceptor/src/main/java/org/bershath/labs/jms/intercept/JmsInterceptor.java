@@ -14,7 +14,7 @@ import org.jboss.logging.Logger;
  *
  * @author  :   Tyronne Wickramarathne
  * @since   :   03-05-2024
- * @version :   1.0
+ * @version :   2.0
  *<br/>
  * This interceptor intercepts incoming packets to the broker and performs a few operations:
  *      - Obtains the remote client's IP address
