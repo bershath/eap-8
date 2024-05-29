@@ -19,10 +19,15 @@ public class MessageSender {
     @Inject
     private JMSContext jmsContext;
 
-    @Resource(mappedName = "java:/jms/queue/B")
+    @Resource(mappedName = "java:/jms/queue/A")
     private Queue queue;
 
     public void sendMessage(String message) {
-        jmsContext.createProducer().send(queue,message);
+        try{
+            jmsContext.createProducer().send(queue,message);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
     }
 }

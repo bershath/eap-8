@@ -1,5 +1,6 @@
 package org.bershath.labs.web;
 
+import jakarta.ejb.EJB;
 import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -13,7 +14,7 @@ import java.io.IOException;
 @WebServlet("/messagesendersvlt")
 public class MessageSenderServlet extends HttpServlet {
 
-    @Inject
+    @EJB
     MessageSender messageSender;
     public MessageSenderServlet() {
     }
