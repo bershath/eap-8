@@ -12,6 +12,10 @@
         <module>jms-queue-listener</module>
         <module>jms-clients</module>
         <module>jms-interceptor</module>
+        <module>zms</module>
+        <module>zms/zms-ejb</module>
+        <module>zms/zms-web</module>
+        <module>zms/zms-ear</module>
     </modules>
 
     <properties>
