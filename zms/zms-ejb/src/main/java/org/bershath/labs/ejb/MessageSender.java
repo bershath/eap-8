@@ -7,7 +7,7 @@ import jakarta.inject.Inject;
 import jakarta.jms.JMSContext;
 import jakarta.jms.Queue;
 
-@Stateless(mappedName = "MessageSender")
+@Stateless
 @LocalBean
 public class MessageSender {
     public MessageSender() {
