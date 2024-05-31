@@ -1,4 +1,8 @@
 package org.bershath.labs.ejb;
+/**
+ * This class is not necessary, I could simply use the MessageSender class.
+ * This is used to demonstrate multiple resource enlistment in an XA transaction.
+ * */
 
 import jakarta.annotation.Resource;
 import jakarta.ejb.*;
@@ -9,17 +13,14 @@ import jakarta.jms.Queue;
 @Stateless
 @LocalBean
 @TransactionManagement(TransactionManagementType.CONTAINER)
-public class MessageSender {
-    public MessageSender() {
-    }
+public class MessageSenderTwo {
 
-    /*
-    It is not required to close the resource, JEE implementation takes care of it.
-     */
+    public  MessageSenderTwo(){}
+
     @Inject
     private JMSContext jmsContext;
 
-    @Resource(mappedName = "java:/jms/queue/A")
+    @Resource(mappedName = "java:/jms/queue/Z")
     private Queue queue;
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)

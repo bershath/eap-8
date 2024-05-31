@@ -7,24 +7,26 @@ import jakarta.persistence.Table;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
 @Table( name = "msg_data" )
-public class JmsDTO implements Serializable {
+public class MessageData implements Serializable {
 
     @Serial
     private static final long serialVersionUID = -8049657301114249138L;
 
     private String messageId;
     private String messageBody;
+    private Date date;
 
-    public JmsDTO() {
+    public MessageData() {
         super();
     }
 
     @Id
-    @Column( name = "message_id" )
+    @Column( name = "msg_id" )
     public String getMessageId() {
         return this.messageId;
     }
@@ -33,7 +35,7 @@ public class JmsDTO implements Serializable {
         this.messageId = messageId;
     }
 
-    @Column( name = "message_body" )
+    @Column( name = "msg_body" )
     public String getMessageBody() {
         return this.messageBody;
     }
@@ -42,16 +44,25 @@ public class JmsDTO implements Serializable {
         this.messageBody = messageBody;
     }
 
+    @Column(name = "msg_date")
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        JmsDTO jmsDTO = (JmsDTO) o;
-        return Objects.equals(messageId, jmsDTO.messageId) && Objects.equals(messageBody, jmsDTO.messageBody);
+        MessageData that = (MessageData) o;
+        return Objects.equals(messageId, that.messageId) && Objects.equals(messageBody, that.messageBody) && Objects.equals(date, that.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(messageId, messageBody);
+        return Objects.hash(messageId, messageBody, date);
     }
 }
