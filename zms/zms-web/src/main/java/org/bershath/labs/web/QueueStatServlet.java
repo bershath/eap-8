@@ -6,41 +6,40 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.bershath.labs.ejb.jms.MessageSender;
 import org.bershath.labs.ejb.jmx.JmxMessageCount;
 import org.jboss.logging.Logger;
 
-import javax.management.MalformedObjectNameException;
 import java.io.IOException;
+import java.io.Serial;
 
-@WebServlet("/messagesendersvlt")
-public class MessageSenderServlet extends HttpServlet {
+@WebServlet("/qstatsvlt")
+public class QueueStatServlet extends HttpServlet {
 
-    private static Logger log = Logger.getLogger(MessageSenderServlet.class);
+    private static Logger log = Logger.getLogger(QueueStatServlet.class);
 
-    @EJB
-    MessageSender messageSender;
-
+    @Serial
+    private static final long serialVersionUID = -2017156064064939535L;
     @EJB
     JmxMessageCount jmxMessageCount;
 
-    public MessageSenderServlet() {
-    }
-
+    public QueueStatServlet(){}
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        messageSender.sendMessage("Test Message");
-        response.getWriter().append("Process completed successfully.").append(request.getContextPath());
+        long msgCount;
         try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
+            msgCount = jmxMessageCount.getMessageCount("jms.queue.Z");
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        response.sendRedirect("/qstatsvlt");
+        response.getWriter().append("Number of Messages in Queue Z: " + msgCount);
+
 
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
+
+
+
 }
