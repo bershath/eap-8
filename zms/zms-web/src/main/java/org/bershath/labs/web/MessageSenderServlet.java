@@ -9,8 +9,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.bershath.labs.ejb.jms.MessageSender;
 import org.bershath.labs.ejb.jmx.JmxMessageCount;
 import org.jboss.logging.Logger;
-
-import javax.management.MalformedObjectNameException;
 import java.io.IOException;
 
 @WebServlet("/messagesendersvlt")
