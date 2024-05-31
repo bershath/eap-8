@@ -30,7 +30,8 @@ public class QueueStatServlet extends HttpServlet {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        response.getWriter().append("Number of Messages in Queue Z: " + msgCount);
+        response.getWriter().append("<html><body>Number of Messages in Queue Z: " + msgCount);
+        response.getWriter().append("<a href='/messagesendersvlt'><br/>Send another message</a></body></html>");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
