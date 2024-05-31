@@ -15,7 +15,7 @@ import java.lang.management.ManagementFactory;
 @Singleton
 public class JmxMessageCount {
 
-    private static Logger log = Logger.getLogger(JmxMessageCount.class);
+    private static final Logger log = Logger.getLogger(JmxMessageCount.class);
 
     public long getMessageCount(String queueAddressName) throws Exception {
         return getQueueControl(getMbeanServer(),getMBeanObjectName(queueAddressName)).getMessageCount();

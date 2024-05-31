@@ -1,7 +1,6 @@
 package org.bershath.labs.web;
 
 import jakarta.ejb.EJB;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -24,7 +23,7 @@ public class QueueStatServlet extends HttpServlet {
 
     public QueueStatServlet(){}
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         long msgCount;
         try {
             msgCount = jmxMessageCount.getMessageCount("jms.queue.Z");
@@ -32,11 +31,9 @@ public class QueueStatServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
         response.getWriter().append("Number of Messages in Queue Z: " + msgCount);
-
-
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         doGet(request, response);
     }
 
