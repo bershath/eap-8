@@ -1,4 +1,4 @@
-package org.bershath.labs.ejb;
+package org.bershath.labs.ejb.jms;
 
 import jakarta.annotation.Resource;
 import jakarta.ejb.*;

@@ -6,7 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.bershath.labs.ejb.MessageSender;
+import org.bershath.labs.ejb.jms.MessageSender;
 
 import java.io.IOException;
 
@@ -21,7 +21,7 @@ public class MessageSenderServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         messageSender.sendMessage("Test Message");
-        response.getWriter().append("Served at: ").append(request.getContextPath());
+        response.getWriter().append("Process completed successfully.").append(request.getContextPath());
 
     }
 

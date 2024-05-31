@@ -1,4 +1,4 @@
-package org.bershath.labs.ejb;
+package org.bershath.labs.ejb.jms;
 /**
  * This class is not necessary, I could simply use the MessageSender class.
  * This is used to demonstrate multiple resource enlistment in an XA transaction.

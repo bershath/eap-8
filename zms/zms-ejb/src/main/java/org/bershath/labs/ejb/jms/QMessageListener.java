@@ -1,9 +1,8 @@
-package org.bershath.labs.ejb;
+package org.bershath.labs.ejb.jms;
 
 import jakarta.ejb.ActivationConfigProperty;
 import jakarta.ejb.EJB;
 import jakarta.ejb.MessageDriven;
-import jakarta.inject.Inject;
 import jakarta.jms.JMSException;
 import jakarta.jms.Message;
 import jakarta.jms.MessageListener;
