@@ -35,7 +35,6 @@ public class JmxMessageCount {
 
     private QueueControl getQueueControl(MBeanServer mBeanServer, ObjectName objectName){
         return MBeanServerInvocationHandler.newProxyInstance(mBeanServer,objectName,QueueControl.class,false);
-
     }
 
 }

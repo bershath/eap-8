@@ -1,0 +1,62 @@
+@Author : Tyronne Wickramarathne
+@Date   : 01-06-2024
+
+Prerequisite:
+JDK 17, PostgreSQL, PostgreSQL JDBC driver v42.6.0 and JBoss EAP 8.x.
+
+You need to edit the persistence.xml in the EJB module and change the datasource
+to point to a valid datasource, XA datasource preferred or you might encounter
+data inconsistency.
+
+You need to point the EAP server in the EAR's pom.xml. Besides, the project build
+is straight forward. There aren't any dependencies on external resources. You
+need to uncomment the persistence.xml file to allow autonomous table creation to
+please the "convenience".
+
+The PostgreSQL module definition has been changed since EAP 8 to comply with JEE10.
+Thus, the dependencies have been changed as outlined:
+
+The javax.api has been changed javaee.api. The transaction api change is
+straightforward. The compatible driver is 42.6.0, I found the closest to the
+recommended as I couldn't find the recommended driver:
+
+<?xml version="1.0" ?>
+<module xmlns="urn:jboss:module:1.1" name="org.postgresql">
+    <resources>
+        <resource-root path="postgresql-42.6.1.jar"/>
+    </resources>
+    <dependencies>
+        <module name="javaee.api"/>
+        <module name="jakarta.transaction.api"/>
+    </dependencies>
+</module>
+
+Datasource configuration for PostgreSQL:
+<xa-datasource jndi-name="java:jboss/datasources/PostgresXADS" pool-name="PostgresXADS">
+        <xa-datasource-property name="ServerName">
+            HOST_IP_ADDRESS
+        </xa-datasource-property>
+        <xa-datasource-property name="PortNumber">
+            DB_PORT
+        </xa-datasource-property>
+        <xa-datasource-property name="DatabaseName">
+            DB_NAME
+        </xa-datasource-property>
+        <driver>postgresql</driver>
+        <security>
+            <user-name>DB_USER_NAME</user-name>
+            <password>DB_USER_PASSWORD</password>
+        </security>
+        <validation>
+            <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker"/>
+            <validate-on-match>true</validate-on-match>
+            <background-validation>false</background-validation>
+            <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter"/>
+        </validation>
+</xa-datasource>
+<drivers>
+    <driver name="postgresql" module="org.postgresql">
+        <driver-class>org.postgresql.Driver</driver-class>
+        <xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class>
+    </driver>
+</drivers>

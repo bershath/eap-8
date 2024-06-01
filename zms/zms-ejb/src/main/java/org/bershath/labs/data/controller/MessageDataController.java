@@ -18,7 +18,7 @@ public class MessageDataController  {
     @PersistenceContext(name="primary")
     protected EntityManager em;
 
-    private static Logger log = Logger.getLogger(MessageDataController.class);
+    private static final Logger log = Logger.getLogger(MessageDataController.class);
 
     MessageDataController(){}
 
@@ -51,7 +51,6 @@ public class MessageDataController  {
             e.printStackTrace();
         }
     }
-
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public void removeJMSData(String messageId) throws Exception{

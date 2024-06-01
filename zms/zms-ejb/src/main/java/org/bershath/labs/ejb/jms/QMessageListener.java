@@ -25,7 +25,7 @@ import java.util.Date;
 )
 public class QMessageListener implements MessageListener {
 
-    private static Logger log = Logger.getLogger(QMessageListener.class);
+    private static final Logger log = Logger.getLogger(QMessageListener.class);
     final DateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd 'at' HH:mm:ss z");
 
     @EJB
