@@ -3,6 +3,8 @@
 
 Prerequisite:
 JDK 17, PostgreSQL, PostgreSQL JDBC driver v42.6.0 and JBoss EAP 8.x.
+If you're using IntelliJ, please select the JDK 17 from :
+File->Project Structure->Platform Settings->SDKs
 
 You need to edit the persistence.xml in the EJB module and change the datasource
 to point to a valid datasource, XA datasource preferred or you might encounter
