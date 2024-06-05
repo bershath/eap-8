@@ -20,7 +20,7 @@ public class MessageSenderTwo {
     @Inject
     private JMSContext jmsContext;
 
-    @Resource(mappedName = "java:/jms/queue/Z")
+    @Resource(name = "java:/jms/queue/Z")
     private Queue queue;
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
