@@ -5,6 +5,12 @@ Prerequisite:
 JDK 17, PostgreSQL, PostgreSQL JDBC driver v42.6.0 and JBoss EAP 8.x.
 If you're using IntelliJ, please select the JDK 17 from :
 File->Project Structure->Platform Settings->SDKs
+You need to create two JMS destinations under the JMS subsystem:
+<jms-queue name="A" entries="java:/jms/queue/A"/>
+<jms-queue name="Z" entries="java:/jms/queue/Z"/>
+Enable jmx management support:
+<management jmx-enabled="true"/>
+Create an application user and set the user name in the MDB: QMessageListener.
 
 You need to edit the persistence.xml in the EJB module and change the datasource
 to point to a valid datasource, XA datasource preferred or you might encounter
