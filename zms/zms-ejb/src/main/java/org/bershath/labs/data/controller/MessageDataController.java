@@ -5,6 +5,8 @@ import jakarta.jms.Message;
 import jakarta.jms.TextMessage;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
 import org.bershath.labs.data.dto.MessageData;
 import org.jboss.logging.Logger;
 
@@ -66,5 +68,12 @@ public class MessageDataController  {
         }catch(Exception e){
             e.printStackTrace();
         }
+    }
+
+    public long getMsgRecordCount(){
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Long> criteriaQuery = criteriaBuilder.createQuery(Long.class);
+        criteriaQuery.select(criteriaBuilder.count(criteriaQuery.from(MessageData.class)));
+        return em.createQuery(criteriaQuery).getSingleResult();
     }
 }

@@ -42,6 +42,7 @@ public class QMessageListener implements MessageListener {
                 log.info(message.getBody(String.class));
                 messageDataController.storeJMSData(message,new Date());
                 messageSenderTwo.sendMessage(message.getBody(String.class));
+                log.info("Record count " + messageDataController.getMsgRecordCount());
             }
             else
                 log.info("Message received with ID: " + message.getJMSMessageID());
