@@ -26,7 +26,7 @@ public class JmxMessageCount {
     }
 
     private String getObjectNameString(String queueAddressName){
-        return  "org.apache.activemq.artemis:broker=\"default\",component=addresses,address=\"jms.queue.Z\",subcomponent=queues,routing-type=\"anycast\",queue=\"jms.queue.Z\"";
+        return  "org.apache.activemq.artemis:broker=\"default\",component=addresses,address=\""+queueAddressName+"\",subcomponent=queues,routing-type=\"anycast\",queue=\""+queueAddressName+"\"";
     }
 
     private MBeanServer getMbeanServer(){
