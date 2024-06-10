@@ -1,0 +1,32 @@
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="jakarta.faces.core"
+      xmlns:jsf="jakarta.faces"
+      xmlns:h="jakarta.faces.html">
+<f:view>
+    <h:head>
+        <title>Message Sender Demo</title>
+    </h:head>
+    <h:body>
+        <h1>Message Sender Demo [JSF 4]</h1>
+        <h:form prependId="false">
+            <label jsf:for="messageBody" jsf:required="true">Enter a text message:</label>
+            <input type="text"
+                   jsf:id="messageBody"
+                   jsf:value="#{messageData.messageBody}"
+                   jsf:required="true"
+                   jsf:requiredMessage="Message body is required"
+                   placeholder="Message body"
+            />
+            <h:message for="messageBody"/>
+            <br/>
+            <input type="submit" jsf:id="submit" value="Send Message"  jsf:action="#{messageData.sendMessage()}">
+                <f:ajax execute="@form" render="@form"/>
+            </input>
+            <h:commandButton value="Clear" action="#{messageData.clear}" type="reset" />
+            <br/>
+            <p id="message">#{messageData.messageBody}</p>
+        </h:form>
+    </h:body>
+</f:view>
+</html>
