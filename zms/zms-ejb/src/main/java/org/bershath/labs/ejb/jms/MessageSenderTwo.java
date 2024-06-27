@@ -5,7 +5,12 @@ package org.bershath.labs.ejb.jms;
  * */
 
 import jakarta.annotation.Resource;
-import jakarta.ejb.*;
+import jakarta.ejb.LocalBean;
+import jakarta.ejb.Stateless;
+import jakarta.ejb.TransactionAttribute;
+import jakarta.ejb.TransactionAttributeType;
+import jakarta.ejb.TransactionManagement;
+import jakarta.ejb.TransactionManagementType;
 import jakarta.inject.Inject;
 import jakarta.jms.JMSContext;
 import jakarta.jms.Queue;
