@@ -22,7 +22,7 @@ public class SecondBean implements Second{
         try {
             Context ctx = new InitialContext();
             First first = (First) ctx.lookup("java:global/lint-eone-1.0-SNAPSHOT/FirstBean!org.bershath.labs.ejb.First");
-            return first.getArtistName() + " As falls wichita so falls wichita falls ";
+            return first.getArtistName() + " - As falls wichita so falls wichita falls ";
         } catch (NamingException e) {
             throw new RuntimeException(e);
         }

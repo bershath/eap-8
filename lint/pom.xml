@@ -13,7 +13,6 @@
     <modules>
         <module>lint-eone</module>
         <module>lint-etwo</module>
-        <module>lint-ear</module>
         <module>lint-web</module>
         <module>lint-interfaces</module>
     </modules>
