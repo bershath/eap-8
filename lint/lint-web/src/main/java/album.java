@@ -31,5 +31,4 @@ public class album extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         doGet(request, response);
     }
-
 }
