@@ -6,7 +6,6 @@ import jakarta.jms.JMSException;
 import jakarta.jms.JMSProducer;
 import jakarta.jms.Queue;
 import jakarta.jms.TextMessage;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -29,7 +28,8 @@ public class QueueSender {
             Queue queue = jmsContext.createQueue(queueName);
             TextMessage textMessage = jmsContext.createTextMessage();
             for(int i = 1; i<= numOfMessages; i++){
-                textMessage.setText("TXTMSG " + i);
+                //textMessage.setText("TXTMSG " + i);
+                textMessage.setText("ATmNMNOP");
                 JMSProducer jmsProducer = jmsContext.createProducer();
                 jmsProducer.send(queue,textMessage);
             }
