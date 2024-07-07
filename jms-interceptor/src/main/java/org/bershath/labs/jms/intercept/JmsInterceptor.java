@@ -1,11 +1,10 @@
 package org.bershath.labs.jms.intercept;
 
-import org.apache.activemq.artemis.api.core.ActiveMQBuffer;
-import org.apache.activemq.artemis.api.core.ActiveMQException;
-import org.apache.activemq.artemis.api.core.ICoreMessage;
-import org.apache.activemq.artemis.api.core.Interceptor;
-import org.apache.activemq.artemis.api.core.Message;
+import org.apache.activemq.artemis.api.core.*;
+import org.apache.activemq.artemis.core.protocol.core.Channel;
 import org.apache.activemq.artemis.core.protocol.core.Packet;
+import org.apache.activemq.artemis.core.protocol.core.impl.RemotingConnectionImpl;
+import org.apache.activemq.artemis.core.protocol.core.impl.wireformat.ActiveMQExceptionMessage;
 import org.apache.activemq.artemis.core.protocol.core.impl.wireformat.MessagePacket;
 import org.apache.activemq.artemis.spi.core.protocol.RemotingConnection;
 import org.jboss.logging.Logger;
@@ -89,7 +88,7 @@ import org.jboss.logging.Logger;
 public class JmsInterceptor implements Interceptor {
 
     private static final Logger log = Logger.getLogger(JmsInterceptor.class);
-
+    private static final String bannedWord = "MNOP";
     /**
      * @param packet
      * @param remotingConnection
@@ -108,7 +107,20 @@ public class JmsInterceptor implements Interceptor {
             // Make sure the message type to be a TextMessage
             if(iCoreMessage.getType() == Message.TEXT_TYPE){
                 ActiveMQBuffer activeMQBuffer = iCoreMessage.getBodyBuffer();
-                log.info("Payload " + activeMQBuffer.readNullableSimpleString());
+                SimpleString payload = activeMQBuffer.readNullableSimpleString();
+                log.debug("Payload " + payload);
+
+                //Here we can do some fancy stuff
+                if (payload.toString().toLowerCase().contains(bannedWord.toLowerCase())) {
+                    RemotingConnectionImpl remotingConnectionImpl = (RemotingConnectionImpl) remotingConnection;
+                    Channel channel = remotingConnectionImpl.getChannel(packet.getChannelID(), -1);
+                    log.info("A client from "+ remotingConnection.getRemoteAddress() + " tried to send a message containing the word " + payload +  ". Denied permission "  );
+                    ActiveMQException exception = new ActiveMQException("Message containing " + bannedWord + " word was not permitted. Message must not contain banned words");
+                    Packet exceptionPacket = new ActiveMQExceptionMessage(exception);
+                    channel.sendAndFlush(exceptionPacket);
+                    remotingConnection.destroy();
+                    return false; // Not proceeding to the next interceptor
+                }
             }
         }
         return true;  // Must return true to proceed to the next interceptor
