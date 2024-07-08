@@ -68,3 +68,12 @@ Datasource configuration for PostgreSQL:
         <xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class>
     </driver>
 </drivers>
+
+
+Application flow:
+- QueueStatServlet - > Displays the number of messages in the Queue Z.
+- QueueStatServlet - > Utilises the JmxMessageCount StatelessBean to count the messages using Artemis' internal API
+- QueueStatServlet - > Direct requests to send messages to the MessageSenderServlet
+- MessageSenderServlet -> Uses the MessageSender EJB (Stateless Bean) to send a message to queue/A
+- QMessageListener -> Listens to the incoming messages on Queue/A, Persists the message to the database, sends the confirmation
+                      to Queue/Z
