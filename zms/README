@@ -69,6 +69,34 @@ Datasource configuration for PostgreSQL:
     </driver>
 </drivers>
 
+DDL Script:
+CREATE DATABASE jms
+    WITH
+    OWNER = leica
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'en_AU.UTF-8'
+    LC_CTYPE = 'en_AU.UTF-8'
+    LOCALE_PROVIDER = 'libc'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+
+DROP TABLE IF EXISTS public.msg_data;
+
+CREATE TABLE IF NOT EXISTS public.msg_data
+(
+    msg_date timestamp(6) without time zone,
+    msg_body character varying(255) COLLATE pg_catalog."default",
+    msg_id character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT msg_data_pkey PRIMARY KEY (msg_id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.msg_data
+    OWNER to leica;
+
 
 Application flow:
 - QueueStatServlet - > Displays the number of messages in the Queue Z.
