@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.1" name="org.bershath.labs.ejb.ejbl.interfaces">
+    <resources>
+        <resource-root path="ejbl-interfaces-1.0-SNAPSHOT.jar"/>
+    </resources>
+    <dependencies>
+        <module name="javaee.api"/>
+        <module name="org.jboss.logging"/>
+    </dependencies>
+</module>
